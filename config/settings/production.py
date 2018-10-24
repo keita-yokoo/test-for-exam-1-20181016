@@ -3,6 +3,7 @@ import os
 
 # SECURITY WARNING: don't run with debug turned on in production!
 print(os.environ.keys())
+print(os.environ["DJANGO_SETTINGS_MODULE"])
 DEBUG = os.environ['DEBUG']
 
 # Database
