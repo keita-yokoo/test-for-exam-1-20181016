@@ -1,10 +1,8 @@
 from .base import *
-import environ
-
-env = environ.Env()
+import os
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG')
+DEBUG = os.environ["DEBUG"]
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
