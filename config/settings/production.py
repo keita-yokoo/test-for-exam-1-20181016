@@ -3,7 +3,7 @@ import os
 
 # SECURITY WARNING: don't run with debug turned on in production!
 print(os.environ.keys())
-DEBUG = os.environ["DEBUG"]
+DEBUG = os.environ['DEBUG']
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
