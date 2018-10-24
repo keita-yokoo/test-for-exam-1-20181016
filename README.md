@@ -10,7 +10,7 @@ What's Here
 This sample includes:
 
 * README.md - this file
-* ebdjango/ - this directory contains your Django project files. Note that this
+* config/ - this directory contains your Django project files. Note that this
   directory contains a Django config file (settings.py) that includes a pre-defined
   SECRET_KEY. Before running in a production environment, you should replace this
   application key with one you generate
