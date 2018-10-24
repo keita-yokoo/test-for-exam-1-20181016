@@ -4,7 +4,7 @@ import sys
 
 if __name__ == "__main__":
     print(sys.version_info)
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.local")
 
     from django.core.management import execute_from_command_line
 
