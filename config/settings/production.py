@@ -2,6 +2,7 @@ from .base import *
 import os
 
 # SECURITY WARNING: don't run with debug turned on in production!
+print(os.environ.keys())
 DEBUG = os.environ["DEBUG"]
 
 # Database
