@@ -6,5 +6,5 @@ import os
 # Create your views here.
 class HomePageView(TemplateView):
     def get(self, request, **kwargs):
-        context = {"test": os.environ["DEBUG"]}
+        context = {"test": os.environ.get("DEBUG", "NONE!!")}
         return render(request, 'index.html', context=context)
