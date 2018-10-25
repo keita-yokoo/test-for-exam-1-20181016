@@ -9,6 +9,10 @@ keys = [
     "TEST"
 ]
 
+# 検証環境であれば検証環境の値を使用する
+if os.environ["environment"] == "dev":
+    keys = ["DEV_" + key for key in keys]
+
 
 # AWS System Manager パラメータストアから本番環境用設定値を取得する
 def get_params():
