@@ -8,6 +8,8 @@ env.read_env(env_file)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
+A_TEST = env('A_TEST')
+TEST = env('TEST')
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
