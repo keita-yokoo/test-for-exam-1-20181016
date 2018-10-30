@@ -10,8 +10,8 @@ keys = [
 ]
 
 # 検証環境であれば検証環境の値を使用する
-if os.environ["environment"] == "dev":
-    keys = ["DEV_" + key for key in keys]
+# if os.environ["environment"] == "dev":
+#     keys = ["DEV_" + key for key in keys]
 
 
 # AWS System Manager パラメータストアから本番環境用設定値を取得する
@@ -52,5 +52,35 @@ DATABASES = {
     }
 }
 
+LOGGING = {
+    'version': 1,
+    'formatters': {
+        'django.server': {
+            '()': 'django.utils.log.ServerFormatter',
+            'format': '[%(asctime)s] %(message)s a',
+        },
+        'default': {
+            'format': '[%(asctime)s] %(levelname)s %(module)s '
+                      '%(process)d %(thread)d %(message)s'
+        },
+    },
+    'handlers': {
+        'info': {
+            'level': 'INFO',
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': os.path.join(BASE_DIR, "log", 'exam.log'),
+            'when': 'D',
+            'interval': 1,
+            'formatter': 'default',
+        },
+    },
+    'loggers': {
+        'exam': {
+            'handlers': ['info'],
+            'level': 'INFO',
+            'propagate': True,
+        }
+    }
+}
 
 

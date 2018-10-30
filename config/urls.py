@@ -20,5 +20,11 @@ from django.contrib import admin
 
 urlpatterns = [
    url(r'^admin/', admin.site.urls),
-   url(r'^', include('helloworld.urls')), 
+   url(r'^', include('exam.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns += [
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+   ]
